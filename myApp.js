@@ -4,9 +4,9 @@ const app = express();
 
 app.use(helmet.hidePoweredBy());
 
-helmet.frameguard(
+app.use(helmet.frameguard(
   { action: 'deny' }
-);
+));
 
 
 
