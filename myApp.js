@@ -12,7 +12,7 @@ app.use(helmet.xssFilter({}));
 
 app.use(helmet.noSniff());
 
-app.use(helmet.ieNoOpenFiles());
+app.use(helmet.ieNoOpen());
 
 
 
