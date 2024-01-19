@@ -16,16 +16,17 @@ const app = express();
 // ));
 
 app.use(helmet({
-  contentSecurityPolicy: {
+  frameguard: {         // configure
+    action: 'deny'
+  },
+  contentSecurityPolicy: {    // enable and configure
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "trusted-cdn.com"],
+      styleSrc: ['style.com'],
     }
-  }
-
-  noCache: true
+  },
+  dnsPrefetchControl: false     // disable
 }))
-
 
 
 
